@@ -1,0 +1,46 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.timer h2 {
+    font-size: 4rem;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.timer .coming-soon {
+    padding-left: 100px;
+    padding-top: 30px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.timer .countdown {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+
+}
+
+.day,
+.hour,
+.minute,
+.second {
+    font-size: 3rem;
+    padding: 10px;
+    color: black;
+}
+
+.timer .box {
+    padding: 10px;
+    border-radius: 20%;
+    background-color: white;
+    opacity: 0.4;
+}
