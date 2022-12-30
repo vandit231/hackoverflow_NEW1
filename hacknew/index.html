@@ -521,7 +521,48 @@
     </div>
   </div>
   <!-- Footer Ends -->
-  <script src="faq.js"></script>
+  <script>
+    const countdown = () => {
+      const countDate = new Date("January 7,2023 10:00:00").getTime()
+      const now = new Date().getTime()
+      const gap = countDate - now;
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24
+
+      const textDay = Math.floor(gap / day);
+      const textHour = Math.floor((gap % day) / hour);
+      const textMinute = Math.floor((gap % hour) / minute);
+      const textSecond = Math.floor((gap % minute) / second);
+
+      document.querySelector(".day").innerText = textDay;
+      document.querySelector(".hour").innerText = textHour;
+      document.querySelector(".minute").innerText = textMinute;
+      document.querySelector(".second").innerText = textSecond;
+    };
+    setInterval(countdown, 1000);
+
+    const show = document.querySelectorAll(".plus");
+
+    for (let i = 0; i < show.length; i++) {
+      show[i].addEventListener("click", function () {
+        document
+          .querySelectorAll(".faq-body")
+        [i].classList.toggle("show-answer");
+        if (
+          document
+            .querySelectorAll(".faq-body")
+          [i].classList.contains("show-answer")
+        ) {
+          show[i].innerText = "-";
+        } else {
+          show[i].innerText = "+";
+        }
+      });
+    }
+
+  </script>
   <script defer async src="https://apply.devfolio.co/v2/sdk.js">
     React.useEffect(() => {
     const script = document.createElement('script');
@@ -534,6 +575,7 @@
     }
 }, []);
   </script>
+  
 
 </body>
 
